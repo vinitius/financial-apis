@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+option go_package = "wallet/v1";
+
+package wallet.v1;
+
+import "google/protobuf/empty.proto";
+
+service WalletService {
+    // Create creates a new Wallet.
+    rpc Create(CreateWalletRequest) returns (CreateWalletResponse) {}
+
+    // Credit generates a credit on a Wallet.
+    rpc Credit(CreditRequest) returns (google.protobuf.Empty) {}
+
+    // Debit generates a debit on a Wallet.
+    rpc Debit(DebitRequest) returns (google.protobuf.Empty) {}
+}
+
+// CreateWalletRequest provides all needed information to create a new Wallet.
+message CreateWalletRequest {
+
+    // Wallet unique identifier. Should be the same as the Wallet ID.
+    string id = 1;
+}
+
+// CreditRequest provides all needed information to perform a credit operation.
+message CreditRequest {
+    // Credit financial operation.
+    string financial_operation = 1;
+    // Credit amount in cents.
+    int64 amount = 2;
+    // Wallet unique identifier.
+    string wallet_id = 3;
+    // Credit description.
+    string description = 4;
+}
+
+// DebitRequest provides all needed information to perform a list of debits atomically.
+message DebitRequest {
+
+    // Wallet unique identifier. Should be the same as the Account ID.
+    string wallet_id = 1;
+    // Debit financial operation.
+    string financial_operation = 2;
+    // Debit amount in cents.
+    int64 amount = 3;
+    // Debit description.
+    string description = 4;
+}
+
+// CreateWalletResponse provides the response of a Wallet creation request.
+message CreateWalletResponse {
+    // Created Wallet unique identifier. Should be the same as the Account ID.
+    string id = 1;
+    string account_number = 2;
+    string branch_code = 3;
+}
