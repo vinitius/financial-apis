@@ -22,6 +22,8 @@ message CreateWalletRequest {
 
     // Wallet unique identifier. Should be the same as the Wallet ID.
     string id = 1;
+    // Holder's name
+    string holder_name = 2;
 }
 
 // CreditRequest provides all needed information to perform a credit operation.
