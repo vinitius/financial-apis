@@ -24,6 +24,10 @@ message CreateWalletRequest {
     string id = 1;
     // Holder's name
     string holder_name = 2;
+    // Holder's doc
+    string holder_doc = 3;
+    // Holder's doc type
+    string holder_doc_type = 4;
 }
 
 // CreditRequest provides all needed information to perform a credit operation.
