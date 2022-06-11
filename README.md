@@ -2,7 +2,9 @@
 
 [TDC-Innovation-2022] Projeto de Apresentação
 
-APIs e documentos relacionados a um ecossistema de Serviços Financeiros.
+APIs e documentos de exemplo relacionados a um ecossistema fictício de Serviços Financeiros.
+
+_You can check the full presentation over [here](https://pitchdeck.hypermatic.com/slides/l3s68qu391857?token=RWZTPnFUIkRoQUpkVFY%3D)_
 
 
 ## gRPC Clients
